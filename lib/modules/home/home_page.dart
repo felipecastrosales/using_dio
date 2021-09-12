@@ -13,7 +13,29 @@ class HomePage extends GetView<HomeController> {
       appBar: AppBar(
         title: const Text('HomePage'),
       ),
-      body: Container(),
+      body: Center(
+        child: Wrap(
+          spacing: 10,
+          children: [
+            ElevatedButton.icon(
+              onPressed: () => Get.toNamed(
+                '/movies',
+                arguments: 'popular',
+              ),
+              icon: const Icon(Icons.people_alt_outlined),
+              label: const Text('Top Rated'),
+            ),
+            ElevatedButton.icon(
+              onPressed: () => Get.toNamed(
+                '/movies',
+                arguments: 'topRated',
+              ),
+              icon: const Icon(Icons.people_alt_outlined),
+              label: const Text('Top Rated'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
