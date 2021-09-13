@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 
 import 'modules/home/home_bindings.dart';
@@ -8,7 +9,10 @@ import 'modules/movies/movies_bindings.dart';
 import 'modules/movies/movies_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  load();
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/movies',
-          page: () => const MoviesPage(),
+          page: () => MoviesPage(),
           binding: MoviesBindings(),
         ),
       ],
