@@ -34,37 +34,41 @@ class MoviesPage extends GetView<MoviesController> {
                   spacing: 10,
                   alignment: WrapAlignment.center,
                   children: [
-                    ...controller.movies.map((films) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 150,
-                              child: Image.network(
-                                'https://image.tmdb.org/t/p/w500/${films.posterImageUrl}',
-                                fit: BoxFit.contain,
+                    ...controller.movies.map(
+                      (films) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 150,
+                                child: Image.network(
+                                  'https://image.tmdb.org/t/p/w500/${films.posterImageUrl}',
+                                  fit: BoxFit.contain,
+                                ),
                               ),
-                            ),
-                            Container(
-                              constraints: const BoxConstraints(maxWidth: 150),
-                              child: Text(
-                                films.title,
-                                style: Theme.of(context).textTheme.subtitle2,
+                              Container(
+                                constraints:
+                                    const BoxConstraints(maxWidth: 150),
+                                child: Text(
+                                  films.title,
+                                  style: Theme.of(context).textTheme.subtitle2,
+                                ),
                               ),
-                            ),
-                            Container(
-                              constraints: const BoxConstraints(maxWidth: 150),
-                              child: Text(
-                                films.overview,
-                                style: Theme.of(context).textTheme.bodyText2,
+                              Container(
+                                constraints: 
+                                    const BoxConstraints(maxWidth: 150),
+                                child: Text(
+                                  films.overview,
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      );
-                    }).toList(),
+                            ],
+                          ),
+                        );
+                      },
+                    ).toList(),
                   ],
                 ),
               ),
