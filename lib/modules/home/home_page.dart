@@ -23,7 +23,7 @@ class HomePage extends GetView<HomeController> {
                 arguments: 'popular',
               ),
               icon: const Icon(Icons.people_alt_outlined),
-              label: const Text('Top Rated'),
+              label: const Text('Populares'),
             ),
             ElevatedButton.icon(
               onPressed: () => Get.toNamed(

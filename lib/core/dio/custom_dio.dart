@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio/native_imp.dart';
 
+import 'interceptors/auth_interceptor.dart';
 import 'interceptors/time_execution_interceptor.dart';
 
 class CustomDio extends DioForNative {
@@ -14,7 +15,13 @@ class CustomDio extends DioForNative {
     interceptors.addAll(
       [
         TimeExecutionInterceptor(),
+        AuthInterceptor(),
       ],
     );
+  }
+
+  CustomDio auth() {
+    options.extra['auth_required'] = true;
+    return this;
   }
 }
