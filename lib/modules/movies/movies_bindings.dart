@@ -9,7 +9,7 @@ import 'package:using_dio/repositories/movies/movies_repository_rest_client.dart
 class MoviesBindings implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<RestClient>(
+    Get.create<RestClient>(
       () => RestClientDio(),
     );
     Get.lazyPut<MoviesRepository>(
